@@ -31,26 +31,26 @@ print(headers['User-Agent'])
 
 def СreateCopySite():
     try:
-        # proxyType = ""
-        # proxyIP = ""
-        # proxyPort = 0
+        proxyType = ""
+        proxyIP = ""
+        proxyPort = 0
 
-        # print("Введите тип прокси: \n")
-        # print("Socks5 - 1\n")
-        # proxyType = input()
+        print("Введите тип прокси: \n")
+        print("Socks5 - 1\n")
+        proxyType = input()
 
-        # print(proxyType)
+        print(proxyType)
 
-        # if proxyType == "1":
-        #     print("Вы выбрали Socks5. Введите IP \n")
-        #     proxyIP = str(input())
-        #     print("Вы выбрали Socks5. Введите Port \n")
-        #     proxyPort = int(input())
-        # else:
-        #     print("Неверное значение")
-        #     return
+        if proxyType == "1":
+            print("Вы выбрали Socks5. Введите IP \n")
+            proxyIP = str(input())
+            print("Вы выбрали Socks5. Введите Port \n")
+            proxyPort = int(input())
+        else:
+            print("Неверное значение")
+            return
 
-        socks.set_default_proxy(socks.SOCKS5, '94.23.222.122', 58527)
+        socks.set_default_proxy(socks.SOCKS5, proxyIP, proxyPort)
         socket.socket = socks.socksocket
 
         print("Прокси вставлены успешно!")
